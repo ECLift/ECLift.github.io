@@ -1,0 +1,19 @@
+{
+  "images": [
+    { "src": "assets/memories/1.webp", "title": "Photo 1" },
+    { "src": "assets/memories/2.webp", "title": "Photo 2" },
+	  { "src": "assets/memories/3.webp", "title": "Photo 3" },
+    { "src": "assets/memories/4.webp", "title": "Photo 4" },
+    { "src": "assets/memories/5.webp", "title": "Photo 5" },
+    { "src": "assets/memories/6.webp", "title": "Photo 6" },
+	  { "src": "assets/memories/7.webp", "title": "Photo 7" },
+    { "src": "assets/memories/8.webp", "title": "Photo 8" },
+    { "src": "assets/memories/9.webp", "title": "Photo 9" },
+    { "src": "assets/memories/10.webp", "title": "Photo 10" },
+    { "src": "assets/memories/11.webp", "title": "Photo 11" },
+	  { "src": "assets/memories/12.webp", "title": "Photo 12" },
+	  { "src": "assets/memories/13.webp", "title": "Photo 13" },
+	  { "src": "assets/memories/14.webp", "title": "Photo 14" },
+	  { "src": "assets/memories/15.webp", "title": "Photo 15" }
+  ]
+}
