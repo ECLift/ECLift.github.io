@@ -5,6 +5,7 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="preload" as="video" href="assets/video/hero.mp4" type="video/mp4" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 	</head>
 	<body class="index is-preload">
@@ -24,7 +25,7 @@
 									<li><a href="no-sidebar.html">XtraChallenge 24'</a></li>
 									<li><a href="xtrachallenge2.html">XtraChallenge 25'</a></li>
 									<li><a href="contact.html">Contact</a></li>
-									<li><a href="Sponsor">Sponsor</a></li>
+                            <li><a href="Sponsor.html">Sponsor</a></li>
 									<!--<li class="submenu">
 										<a href="#">Submenu</a>
 										<ul>
@@ -45,6 +46,15 @@
 			<!-- Banner -->
 				<section id="banner">
 
+					<!-- Background video replaces banner image -->
+					<video class="video-background" autoplay muted loop playsinline preload="auto">
+						<!-- Replace these sources with your actual video files -->
+						<source src="assets/video/hero.mp4" type="video/mp4" />
+						<source src="assets/video/hero.webm" type="video/webm" />
+						<!-- Fallback text for unsupported browsers -->
+						Your browser does not support the video tag.
+					</video>
+
 					<!--
 						".inner" is set up as an inline-block so it automatically expands
 						in both directions to fit whatever's inside it. This means it won't
@@ -62,9 +72,9 @@
 						<br />
 						at <a href="https://www.ec-lyon.fr/">Centrale Lyon</a>.</p>
 						<footer>
-							<ul class="buttons stacked">
-								<li><a href="#main" class="button fit scrolly">Tell Me More</a></li>
-							</ul>
+                            <ul class="buttons stacked">
+                                <li><a href="#main" class="button cta-gold scrolly">Tell Me More</a></li>
+                            </ul>
 						</footer>
 
 					</div>
@@ -74,8 +84,8 @@
 			<!-- Main -->
 				<article id="main">
 
-					<header class="special container">
-						<img src="images/ECLift_logo.svg" alt="ECLift Logo" style="width: 330px; height: auto; margin-top: -250px;">
+                    <header class="special container">
+                        <img src="images/ECLift_logo.svg" alt="ECLift Logo" class="brand-mark">
 						<h2>Founded in 2023 <strong></strong> 
 						<br />
 						Winner of the XtraChallenge 2024</h2>
@@ -85,6 +95,28 @@
 						<br />
 						XtraChallenge Competition. <!--how to add a link ? Like this : <a href="http://html5up.net/license">this is a link</a> wow. Have fun! --> </p>
 					</header>
+
+					<!-- Georgia-inspired callout -->
+					<section class="cta-hero">
+						<div class="container medium">
+							<h2 class="cta-title">Student-led, Student-run.</h2>
+							<p class="cta-subtext">
+								ECLift is Centrale Lyon’s student aeronautics club. We design,
+								build, and fly aircraft for the XtraChallenge, giving members
+								hands-on exposure across design, manufacturing, and flight testing.
+							</p>
+							<div class="cta-buttons">
+								<a href="left-sidebar.html" class="button cta-gold large">Meet the Team</a>
+								<a href="contact.html" class="button cta-gold large">Contact Us</a>
+							</div>
+						</div>
+						<!-- Curved divider for smooth transition -->
+						<div class="section-divider" aria-hidden="true">
+							<svg viewBox="0 0 1440 80" preserveAspectRatio="none">
+								<path d="M0,32L60,37.3C120,43,240,53,360,53.3C480,53,600,43,720,37.3C840,32,960,32,1080,32C1200,32,1320,32,1380,32L1440,32L1440,80L1380,80C1320,80,1200,80,1080,80C960,80,840,80,720,80C600,80,480,80,360,80C240,80,120,80,60,80L0,80Z" fill="#1f1f1f"/>
+							</svg>
+						</div>
+					</section>
 
 					<!-- One -->
 						<!--<section class="wrapper style2 container special-alt">
@@ -156,74 +188,37 @@
 							</div>
 						</section>
 
-					<!-- Three -->
-						<section class="wrapper style3 container special">
-
-							<header class="major">
-								<h2>Our <strong>achievements</strong></h2>
-							</header>
-
-							<div class="row">
-								<div class="col-6 col-12-narrower">
-
-									<section>
-										<a href="#" class="image featured"><img src="images/pic01_01.png" alt="" /></a>
-										<header>
-											<h3>Motivated</h3>
-										</header>
-										<p>Master's and engineering students united around a passion</p>
-									</section>
-
+					<!-- Video Spotlight -->
+					<section class="video-spotlight">
+						<div class="video-spotlight__backdrop" aria-hidden="true"></div>
+						<div class="container medium">
+							<div class="video-card">
+								<h2 class="video-title">Featured Video</h2>
+								<p class="video-subtitle">Watch our latest highlights from design, manufacturing, and flight testing.</p>
+								<div class="video-embed" role="group" aria-label="ECLift YouTube video">
+									<!-- Replace the src with your YouTube link -->
+									<iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="ECLift Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 								</div>
-								<div class="col-6 col-12-narrower">
-
-									<section>
-										<a href="#" class="image featured"><img src="images/pic02_2.png" alt="" /></a>
-										<header>
-											<h3>Experienced talents</h3>
-										</header>
-										<p>Last year winner !</p>
-									</section>
-
+								<div class="video-actions">
+									<a href="#main" class="button cta-gold large">Learn More</a>
 								</div>
 							</div>
-							<div class="row">
-								<div class="col-6 col-12-narrower">
+						</div>
+					</section>
 
-									<section>
-										<a href="#" class="image featured"><img src="images/pic03_3.jpg" alt="" /></a>
-										<header>
-											<h3>Tool and equipment</h3>
-										</header>
-										<p>Access to expensive and quality tool like Centrale Lyon's fablab</p>
-									</section>
-
-								</div>
-								<div class="col-6 col-12-narrower">
-
-									<section>
-										<a href="#" class="image featured"><img src="images/pic03_4.png" alt="" /></a>
-										<header>
-											<h3>Professionalism</h3>
-										</header>
-										<p>Meeting</p>
-									</section>
-
-								</div>
-							</div>
-
-							<footer class="major">
-								<ul class="buttons">
-									<li><a href="#" class="button">Back to the top</a></li>
-								</ul>
-							</footer>
-
-						</section>
+					<!-- Memories -->
+					<section id="memories" class="memories wrapper container special">
+						<header class="major">
+							<h2>High Flying <strong>Memories</strong></h2>
+							<p>A look back at design, build, and flight moments.</p>
+						</header>
+						<div id="memories-grid" class="memories-carousel" aria-live="polite"></div>
+					</section>
 
 				</article>
 
 			<!-- CTA -->
-				<section id="cta">
+			<section id="cta" style="--cta-bg: url('images/cta.webp'); --cta-bg-position: center center;">
 
 					<header>
 						<h2>Ready to <strong>support us </strong>?</h2>
@@ -265,6 +260,28 @@
 			<script src="assets/js/browser.min.js"></script>
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
+			<script id="memories-data" type="application/json">
+{
+  "images": [
+    { "src": "assets/memories/1.webp", "title": "Photo 1" },
+    { "src": "assets/memories/2.webp", "title": "Photo 2" },
+	{ "src": "assets/memories/3.webp", "title": "Photo 3" },
+    { "src": "assets/memories/4.webp", "title": "Photo 4" },
+    { "src": "assets/memories/5.webp", "title": "Photo 5" },
+    { "src": "assets/memories/6.webp", "title": "Photo 6" },
+	{ "src": "assets/memories/7.webp", "title": "Photo 7" },
+    { "src": "assets/memories/8.webp", "title": "Photo 8" },
+    { "src": "assets/memories/9.webp", "title": "Photo 9" },
+    { "src": "assets/memories/10.webp", "title": "Photo 10" },
+    { "src": "assets/memories/11.webp", "title": "Photo 11" },
+	{ "src": "assets/memories/12.webp", "title": "Photo 12" },
+	{ "src": "assets/memories/13.webp", "title": "Photo 13" },
+	{ "src": "assets/memories/14.webp", "title": "Photo 14" },
+	{ "src": "assets/memories/15.webp", "title": "Photo 15" }
+  ]
+}
+			</script>
+			<script src="assets/js/memories.js"></script>
 			<script src="assets/js/main.js"></script>
 
 	</body>
