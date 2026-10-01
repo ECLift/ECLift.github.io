@@ -3332,93 +3332,47 @@
       <!-- ================================================================= -->
       <!-- FULL DOSSIER : SEASON 2027 (COMING SOON)                          -->
       <!-- ================================================================= -->
-      <div id="year-panel-2027" class="year-panel hidden space-y-8">
-        
-        <!-- Hero Coming Soon Card -->
-        <div class="relative overflow-hidden rounded-2xl bg-gradient-to-br from-[#1a1e27] via-[#151821] to-[#0f1117] text-white p-8 sm:p-14 border border-white/10 border-b-4 border-b-[#c3ad67] shadow-2xl">
+      <div id="year-panel-2027" class="year-panel hidden">
+        <div class="relative overflow-hidden rounded-2xl bg-gradient-to-br from-[#1a1e27] via-[#151821] to-[#0f1117] text-white p-12 sm:p-20 border border-white/10 border-b-4 border-b-[#c3ad67] shadow-2xl text-center flex flex-col items-center justify-center space-y-6">
           <!-- Background decorative glow -->
           <div class="absolute -top-24 -right-24 w-96 h-96 bg-[#c3ad67]/10 rounded-full blur-3xl pointer-events-none"></div>
           <div class="absolute -bottom-24 -left-24 w-96 h-96 bg-[#6a1a2c]/20 rounded-full blur-3xl pointer-events-none"></div>
 
-          <div class="relative z-10 max-w-3xl space-y-6">
-            <!-- Badge -->
-            <div class="flex flex-wrap items-center gap-3">
-              <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 text-[#dfc882] border border-[#c3ad67]/30 text-xs font-mono font-bold uppercase tracking-widest">
-                <span class="w-2 h-2 rounded-full bg-[#dfc882] animate-pulse"></span>
-                Season 2027 · Upcoming Chapter
-              </span>
-              <span class="text-xs font-mono text-gray-400">Centrale Lyon Aerospace Club</span>
-            </div>
+          <!-- Pulsing Badge -->
+          <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-500/10 text-[#dfc882] border border-[#c3ad67]/30 text-xs font-mono font-bold uppercase tracking-widest">
+            <span class="w-2 h-2 rounded-full bg-[#dfc882] animate-pulse"></span>
+            Season 2027 · Upcoming Campaign
+          </div>
 
-            <!-- Title -->
-            <div class="space-y-2">
-              <h2 class="text-4xl sm:text-6xl font-black tracking-tight uppercase text-white">
-                Coming <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#dfc882] to-[#c3ad67]">Soon</span>
-              </h2>
-              <p class="text-sm sm:text-base font-light text-gray-300 tracking-wide uppercase">
-                The 2027 campaign and challenge are currently in preparation
-              </p>
-            </div>
-
-            <!-- Description -->
-            <p class="text-gray-300 text-sm sm:text-base leading-relaxed">
-              Nothing is finalized for the 2027 campaign yet. Following our European victory with <strong class="text-white font-semibold">ECLifter (2024)</strong>, <strong class="text-white font-semibold">ECTanker (2025)</strong>, and our <strong class="text-white font-semibold">2026 competition aircraft</strong>, the team will announce the new challenge rules, aircraft architecture, and team lineup once the official competition guidelines are released.
+          <!-- Big Title -->
+          <div class="space-y-2">
+            <h2 class="text-5xl sm:text-7xl font-black tracking-wider uppercase text-white font-sans">
+              Coming <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#dfc882] to-[#c3ad67]">Soon</span>
+            </h2>
+            <p class="text-sm sm:text-base font-light text-gray-400 tracking-widest uppercase">
+              Projet &amp; Défi 2027 en cours de préparation
             </p>
+          </div>
 
-            <!-- Action buttons -->
-            <div class="pt-4 flex flex-wrap items-center gap-4">
-              <button onclick="openContactModal('Season 2027 / Recruitment & Partnership')" 
-                      class="px-6 py-3 rounded-lg bg-[#c3ad67] hover:bg-[#dfc882] text-black font-bold text-xs uppercase tracking-widest transition transform hover:-translate-y-0.5 shadow-lg flex items-center gap-2 cursor-pointer">
-                <i data-lucide="mail" class="w-4 h-4"></i>
-                <span>Partner or Join for 2027</span>
-              </button>
-              <button onclick="setYear('2026')" 
-                      class="px-5 py-3 rounded-lg bg-white/10 hover:bg-white/20 text-white font-semibold text-xs tracking-wider transition border border-white/15 flex items-center gap-2 cursor-pointer">
-                <i data-lucide="arrow-left" class="w-4 h-4"></i>
-                <span>Explore Season 2026</span>
-              </button>
-              <button onclick="setYear('2024')" 
-                      class="px-5 py-3 rounded-lg bg-white/5 hover:bg-white/15 text-gray-300 hover:text-white font-semibold text-xs tracking-wider transition border border-white/10 flex items-center gap-2 cursor-pointer">
-                <i data-lucide="trophy" class="w-4 h-4 text-[#dfc882]"></i>
-                <span>View 2024 Winners</span>
-              </button>
-            </div>
+          <!-- Concise realistic text -->
+          <p class="text-gray-300 text-sm sm:text-base max-w-xl mx-auto leading-relaxed">
+            Rien n'est encore prévu pour la saison 2027. Les spécifications de l'appareil et les détails du projet seront dévoilés une fois le nouveau cahier des charges de la compétition publié.
+          </p>
+
+          <!-- Buttons -->
+          <div class="pt-4 flex flex-wrap items-center justify-center gap-4">
+            <button onclick="openContactModal('Season 2027 / Recruitment & Partnership')" 
+                    class="px-6 py-3 rounded-lg bg-[#c3ad67] hover:bg-[#dfc882] text-black font-bold text-xs uppercase tracking-widest transition transform hover:-translate-y-0.5 shadow-lg flex items-center gap-2 cursor-pointer">
+              <i data-lucide="mail" class="w-4 h-4"></i>
+              <span>Nous contacter / Partenariat</span>
+            </button>
+            <button onclick="setYear('2026')" 
+                    class="px-5 py-3 rounded-lg bg-white/10 hover:bg-white/20 text-white font-semibold text-xs tracking-wider transition border border-white/15 flex items-center gap-2 cursor-pointer">
+              <i data-lucide="arrow-left" class="w-4 h-4"></i>
+              <span>Voir la saison 2026</span>
+            </button>
           </div>
         </div>
-
-        <!-- 3 Informational Status Cards -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div class="bg-white rounded-xl border border-gray-200 p-6 shadow-sm space-y-3">
-            <div class="w-10 h-10 rounded-lg bg-[#1f2227] text-[#dfc882] flex items-center justify-center font-bold">
-              <i data-lucide="file-question" class="w-5 h-5"></i>
-            </div>
-            <h4 class="font-bold text-base text-[#3a3a3a]">Regulations Pending</h4>
-            <p class="text-xs text-gray-600 leading-relaxed">
-              Official regulations and scoring metrics for the 2027 collegiate aerospace competitions have not been published yet. Preliminary design will begin as soon as the mission criteria are disclosed.
-            </p>
-          </div>
-
-          <div class="bg-white rounded-xl border border-gray-200 p-6 shadow-sm space-y-3">
-            <div class="w-10 h-10 rounded-lg bg-[#6a1a2c] text-[#dfc882] flex items-center justify-center font-bold">
-              <i data-lucide="users" class="w-5 h-5"></i>
-            </div>
-            <h4 class="font-bold text-base text-[#3a3a3a]">Team Handover</h4>
-            <p class="text-xs text-gray-600 leading-relaxed">
-              Knowledge transfer, composite tooling preservation, and onboarding of incoming engineering cohorts at École Centrale de Lyon will ensure technical continuity into 2027.
-            </p>
-          </div>
-
-          <div class="bg-white rounded-xl border border-gray-200 p-6 shadow-sm space-y-3">
-            <div class="w-10 h-10 rounded-lg bg-[#c3ad67] text-black flex items-center justify-center font-bold">
-              <i data-lucide="handshake" class="w-5 h-5"></i>
-            </div>
-            <h4 class="font-bold text-base text-[#3a3a3a]">Early Partnerships</h4>
-            <p class="text-xs text-gray-600 leading-relaxed">
-              Companies, sponsors, and research labs wishing to support our student aerospace engineering team can already establish early sponsorship agreements for the 2027 edition.
-            </p>
-          </div>
-        </div>
-
       </div>
 
     </div>
