@@ -1,0 +1,1364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ECLIFT | Official Recruitment Poster (A4)</title>
+  <meta name="description" content="Recruitment poster for ECLift - Competitive Drone & Aeronautical Engineering Club at École Centrale de Lyon.">
+
+  <!-- Google Fonts: Syne (Ultra-bold poster display) + Outfit + Space Grotesk + JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700;800&family=Outfit:wght@400;600;700;800;900&family=Space+Grotesk:wght@600;700;800&family=Syne:wght@700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    /* -------------------------------------------------------------
+       RESET & EXACT A4 SIZING (210mm x 297mm)
+       ------------------------------------------------------------- */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --gold: #f59e0b;
+      --gold-neon: #fbbf24;
+      --crimson: #e11d48;
+      --carbon: #070a12;
+      --carbon-card: #101626;
+      --cyan-neon: #06b6d4;
+      --white: #ffffff;
+      
+      --font-poster: 'Syne', sans-serif;
+      --font-ui: 'Outfit', sans-serif;
+      --font-tech: 'Space Grotesk', sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+
+    body {
+      font-family: var(--font-ui);
+      background-color: #030509;
+      color: #ffffff;
+      -webkit-font-smoothing: antialiased;
+      padding: 12px 0 35px 0;
+    }
+
+    .poster-viewport {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      width: 100%;
+    }
+
+    /* -------------------------------------------------------------
+       THE A4 POSTER CANVAS: 100% BALANCED VERTICAL RHYTHM
+       ------------------------------------------------------------- */
+    .a4-sheet {
+      width: 210mm;
+      height: 297mm;
+      max-height: 297mm;
+      background: var(--carbon);
+      color: #ffffff;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 8mm 9mm 7.5mm 9mm;
+      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.85), 0 0 0 1px rgba(255, 255, 255, 0.12);
+      transition: background 0.25s, color 0.25s;
+    }
+
+    /* Background Watermarks & Subtle Tech Grid */
+    .bg-grid-overlay {
+      position: absolute;
+      inset: 0;
+      background-image: 
+        linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+      background-size: 10mm 10mm;
+      pointer-events: none;
+    }
+
+    .bg-giant-watermark {
+      position: absolute;
+      top: 40mm;
+      right: -10mm;
+      font-family: var(--font-poster);
+      font-size: 110pt;
+      font-weight: 900;
+      color: rgba(255, 255, 255, 0.02);
+      line-height: 0.8;
+      pointer-events: none;
+      letter-spacing: -0.05em;
+      transform: rotate(-10deg);
+      user-select: none;
+    }
+
+    /* -------------------------------------------------------------
+       1. TOPBAR: IDENTITY & BADGES
+       ------------------------------------------------------------- */
+    .poster-topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+      z-index: 2;
+      border-bottom: 2px solid rgba(255, 255, 255, 0.18);
+      padding-bottom: 2.2mm;
+    }
+
+    .brand-cluster {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-logo-img {
+      height: 36px;
+      width: auto;
+      filter: drop-shadow(0 2px 10px rgba(251, 191, 36, 0.4));
+    }
+
+    .brand-text-block {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .brand-sub {
+      font-family: var(--font-mono);
+      font-size: 6.2pt;
+      font-weight: 800;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: #fbbf24;
+    }
+
+    .brand-school {
+      font-size: 7.2pt;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      color: #94a3b8;
+      text-transform: uppercase;
+    }
+
+    .top-trophy-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      background: linear-gradient(135deg, #e11d48, #be123c);
+      color: #ffffff;
+      padding: 4px 12px;
+      border-radius: 999px;
+      font-family: var(--font-poster);
+      font-size: 7.8pt;
+      font-weight: 900;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      box-shadow: 0 4px 15px rgba(225, 29, 72, 0.45);
+      transform: rotate(-1.5deg);
+    }
+
+    /* -------------------------------------------------------------
+       2. HERO SLOGAN: MASSIVE TYPOGRAPHY
+       ------------------------------------------------------------- */
+    .hero-slogan-wrap {
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-pretitle {
+      display: inline-block;
+      background: #fbbf24;
+      color: #000000;
+      font-family: var(--font-mono);
+      font-size: 6.5pt;
+      font-weight: 900;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      padding: 2.5px 8px;
+      border-radius: 3px;
+      margin-bottom: 1.5mm;
+    }
+
+    .hero-headline {
+      font-family: var(--font-poster);
+      font-size: 34pt;
+      font-weight: 900;
+      line-height: 0.92;
+      letter-spacing: -0.025em;
+      text-transform: uppercase;
+      color: #ffffff;
+    }
+
+    .hero-headline .highlight-gold {
+      color: #fbbf24;
+      text-shadow: 0 0 25px rgba(251, 191, 36, 0.4);
+    }
+
+    .hero-subhook {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 2mm;
+      padding-top: 1.8mm;
+      border-top: 1px dashed rgba(255, 255, 255, 0.18);
+    }
+
+    .hero-subhook-p {
+      font-size: 8.5pt;
+      font-weight: 700;
+      color: #cbd5e1;
+      max-width: 145mm;
+      line-height: 1.25;
+      letter-spacing: 0.01em;
+    }
+
+    .hero-subhook-p strong {
+      color: #fbbf24;
+    }
+
+    .badge-no-xp {
+      background: rgba(56, 189, 248, 0.15);
+      border: 1px solid #38bdf8;
+      border-radius: 4px;
+      padding: 4px 10px;
+      font-family: var(--font-mono);
+      font-size: 6.8pt;
+      font-weight: 900;
+      color: #38bdf8;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    /* -------------------------------------------------------------
+       3. TELEMETRY STATS HUD STRIP (BIG NUMBERS)
+       ------------------------------------------------------------- */
+    .hud-strip {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2.5mm;
+      background: rgba(16, 22, 38, 0.95);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      border-radius: 7px;
+      padding: 2.8mm 3mm;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hud-stat {
+      text-align: center;
+      border-right: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .hud-stat:last-child {
+      border-right: none;
+    }
+
+    .hud-val {
+      font-family: var(--font-mono);
+      font-size: 13.5pt;
+      font-weight: 900;
+      color: #ffffff;
+      line-height: 1;
+    }
+    .hud-val.accent-gold { color: #fbbf24; }
+    .hud-val.accent-cyan { color: #38bdf8; }
+    .hud-val.accent-rose { color: #f43f5e; }
+
+    .hud-lbl {
+      font-family: var(--font-mono);
+      font-size: 5.6pt;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #94a3b8;
+      margin-top: 2px;
+    }
+
+    /* -------------------------------------------------------------
+       4. HUGE VISUAL GALLERY (PHOTOS ARE THE STAR OF THE POSTER)
+       ------------------------------------------------------------- */
+    .collage-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2.5mm;
+      position: relative;
+      z-index: 2;
+    }
+
+    .collage-item {
+      position: relative;
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      background: #0d1322;
+      height: 64mm; /* Greatly enlarged photo height */
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+    }
+
+    .collage-img-box {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .collage-img-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .collage-img-box img.fit-contain {
+      object-fit: contain;
+      background: #080c16;
+      padding: 4px;
+    }
+
+    .collage-img-box img.fit-blueprint {
+      object-fit: contain;
+      background: #060a14;
+      padding: 3px;
+      filter: contrast(1.15) brightness(1.05);
+    }
+
+    .collage-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(7, 10, 18, 0.95) 0%, rgba(7, 10, 18, 0.2) 65%, transparent 100%);
+      pointer-events: none;
+    }
+
+    .sticker-tag {
+      position: absolute;
+      top: 6px;
+      left: 6px;
+      font-family: var(--font-mono);
+      font-size: 5.2pt;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 2.5px 6px;
+      border-radius: 3px;
+      z-index: 3;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+    }
+    .sticker-rose { background: #e11d48; color: #ffffff; }
+    .sticker-gold { background: #fbbf24; color: #000000; }
+    .sticker-emerald { background: #059669; color: #ffffff; }
+    .sticker-blue { background: #0284c7; color: #ffffff; }
+
+    .collage-content {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 3mm 3mm;
+      z-index: 3;
+    }
+
+    .collage-title {
+      font-family: var(--font-poster);
+      font-size: 8.8pt;
+      font-weight: 900;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      color: #ffffff;
+      line-height: 1.1;
+    }
+
+    .collage-tagline {
+      font-size: 6pt;
+      font-family: var(--font-mono);
+      color: #fbbf24;
+      margin-top: 2px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* -------------------------------------------------------------
+       5. FOUR ACTION CREWS (CLEAN & PUNCHY - NO PARAGRAPHS)
+       ------------------------------------------------------------- */
+    .squads-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      position: relative;
+      z-index: 2;
+    }
+
+    .squads-title {
+      font-family: var(--font-poster);
+      font-size: 9.2pt;
+      font-weight: 900;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .squads-title span {
+      color: #fbbf24;
+    }
+
+    .squads-sub {
+      font-family: var(--font-mono);
+      font-size: 5.8pt;
+      color: #94a3b8;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .squads-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2.5mm;
+      position: relative;
+      z-index: 2;
+    }
+
+    .squad-card {
+      background: rgba(16, 22, 38, 0.95);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 7px;
+      padding: 3.5mm 3mm;
+      position: relative;
+      overflow: hidden;
+      border-top: 3.5px solid #ffffff;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 42mm; /* Expanded height */
+    }
+
+    .sq-1 { border-top-color: #38bdf8; }
+    .sq-2 { border-top-color: #fbbf24; }
+    .sq-3 { border-top-color: #ec4899; }
+    .sq-4 { border-top-color: #10b981; }
+
+    .squad-icon-wrap {
+      width: 28px;
+      height: 28px;
+      border-radius: 6px;
+      background: rgba(255, 255, 255, 0.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 2mm;
+    }
+    .sq-1 .squad-icon-wrap { background: rgba(56, 189, 248, 0.15); color: #38bdf8; }
+    .sq-2 .squad-icon-wrap { background: rgba(251, 191, 36, 0.15); color: #fbbf24; }
+    .sq-3 .squad-icon-wrap { background: rgba(236, 72, 153, 0.15); color: #f43f5e; }
+    .sq-4 .squad-icon-wrap { background: rgba(16, 185, 129, 0.15); color: #34d399; }
+
+    .squad-name {
+      font-family: var(--font-poster);
+      font-size: 8.8pt;
+      font-weight: 900;
+      text-transform: uppercase;
+      color: #ffffff;
+      line-height: 1.15;
+      margin-bottom: 1.5mm;
+    }
+
+    .squad-pills {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2mm;
+    }
+
+    .squad-pill-item {
+      font-size: 6.2pt;
+      font-weight: 600;
+      color: #cbd5e1;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .squad-pill-item i {
+      width: 10px;
+      height: 10px;
+      color: #fbbf24;
+      flex-shrink: 0;
+    }
+
+    /* -------------------------------------------------------------
+       6. THE BOARDING PASS: VIP TICKET & MASSIVE QR CODE
+       ------------------------------------------------------------- */
+    .boarding-pass-wrap {
+      position: relative;
+      z-index: 2;
+      background: #ffffff;
+      color: #070a12;
+      border-radius: 9px;
+      padding: 4mm 5mm;
+      display: grid;
+      grid-template-columns: 1.55fr auto 1.15fr;
+      align-items: center;
+      gap: 5mm;
+      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.75);
+      border: 2px solid #fbbf24;
+      min-height: 56mm; /* Huge presence at bottom */
+    }
+
+    .bp-left {
+      display: flex;
+      flex-direction: column;
+      gap: 2mm;
+    }
+
+    .bp-headline-badge {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .bp-tag {
+      background: #070a12;
+      color: #fbbf24;
+      font-family: var(--font-mono);
+      font-size: 6.2pt;
+      font-weight: 900;
+      padding: 2.5px 7px;
+      border-radius: 3px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+
+    .bp-title {
+      font-family: var(--font-poster);
+      font-size: 13pt;
+      font-weight: 900;
+      line-height: 1;
+      text-transform: uppercase;
+      letter-spacing: -0.01em;
+      color: #070a12;
+    }
+
+    .bp-bullets-row {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2mm 3.5mm;
+      font-size: 6.8pt;
+      color: #1e293b;
+      font-weight: 700;
+    }
+
+    .bp-bullet-item {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .bp-bullet-item i {
+      width: 12px;
+      height: 12px;
+      color: #e11d48;
+      flex-shrink: 0;
+    }
+
+    .bp-callout-strap {
+      font-size: 6.5pt;
+      background: #fef3c7;
+      border-left: 3.5px solid #f59e0b;
+      padding: 1.8mm 2.5mm;
+      border-radius: 3px;
+      color: #78350f;
+      font-weight: 800;
+    }
+
+    /* Perforated divider line */
+    .bp-perforated-divider {
+      height: 100%;
+      border-left: 2px dashed #94a3b8;
+      position: relative;
+    }
+
+    /* Huge QR target frame */
+    .bp-right-qr {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      cursor: pointer;
+      position: relative;
+      padding: 1mm;
+    }
+
+    .qr-frame-box {
+      width: 36mm; /* Giant 36mm x 36mm frame */
+      height: 36mm;
+      border: 2px dashed #070a12;
+      border-radius: 8px;
+      background: #f8fafc;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 1.5mm;
+      transition: all 0.2s;
+    }
+
+    .qr-frame-box:hover {
+      border-color: #e11d48;
+      background: #fff1f2;
+    }
+
+    .qr-corner-notch {
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      border-color: #070a12;
+    }
+    .q-tl { top: 2px; left: 2px; border-top: 2.5px solid; border-left: 2.5px solid; }
+    .q-tr { top: 2px; right: 2px; border-top: 2.5px solid; border-right: 2.5px solid; }
+    .q-bl { bottom: 2px; left: 2px; border-bottom: 2.5px solid; border-left: 2.5px solid; }
+    .q-br { bottom: 2px; right: 2px; border-bottom: 2.5px solid; border-right: 2.5px solid; }
+
+    .qr-placeholder-icon {
+      width: 44px;
+      height: 44px;
+      color: #070a12;
+      stroke-width: 1.8;
+    }
+
+    .qr-preview-img-active {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: none;
+    }
+
+    .qr-action-heading {
+      font-family: var(--font-poster);
+      font-size: 9.5pt;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #070a12;
+      line-height: 1.1;
+    }
+
+    .qr-action-instruction {
+      font-size: 5.5pt;
+      color: #64748b;
+      margin-top: 1.5px;
+      font-weight: 600;
+    }
+
+    .qr-url-pill {
+      font-family: var(--font-mono);
+      font-size: 6pt;
+      font-weight: 900;
+      color: #e11d48;
+      margin-top: 1px;
+    }
+
+    /* -------------------------------------------------------------
+       7. TECHNICAL FOOTER
+       ------------------------------------------------------------- */
+    .poster-footer-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: var(--font-mono);
+      font-size: 5.5pt;
+      color: #64748b;
+      letter-spacing: 0.08em;
+      border-top: 1px solid rgba(255, 255, 255, 0.14);
+      padding-top: 1.5mm;
+    }
+
+    /* -------------------------------------------------------------
+       LIGHT PRINT THEME (INK-SAVER WHITE)
+       ------------------------------------------------------------- */
+    body.mode-white .a4-sheet {
+      background: #ffffff;
+      color: #070a12;
+    }
+    body.mode-white .bg-grid-overlay {
+      background-image: 
+        linear-gradient(rgba(0, 0, 0, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
+    }
+    body.mode-white .bg-giant-watermark {
+      color: rgba(0, 0, 0, 0.03);
+    }
+    body.mode-white .poster-topbar {
+      border-bottom-color: #070a12;
+    }
+    body.mode-white .brand-school {
+      color: #475569;
+    }
+    body.mode-white .hero-headline {
+      color: #070a12;
+    }
+    body.mode-white .hero-subhook-p {
+      color: #334155;
+    }
+    body.mode-white .badge-no-xp {
+      background: #e0f2fe;
+      border-color: #7dd3fc;
+      color: #0369a1;
+    }
+    body.mode-white .hud-strip {
+      background: #f1f5f9;
+      border-color: #cbd5e1;
+    }
+    body.mode-white .hud-val {
+      color: #070a12;
+    }
+    body.mode-white .squad-card {
+      background: #f8fafc;
+      border-color: #e2e8f0;
+    }
+    body.mode-white .squad-name {
+      color: #070a12;
+    }
+    body.mode-white .squad-pill-item {
+      color: #475569;
+    }
+    body.mode-white .boarding-pass-wrap {
+      background: #070a12;
+      color: #ffffff;
+      border-color: #f59e0b;
+    }
+    body.mode-white .bp-title {
+      color: #ffffff;
+    }
+    body.mode-white .bp-bullets-row {
+      color: #cbd5e1;
+    }
+    body.mode-white .qr-action-heading {
+      color: #ffffff;
+    }
+    body.mode-white .qr-frame-box {
+      background: #1e293b;
+      border-color: #fbbf24;
+    }
+    body.mode-white .qr-placeholder-icon {
+      color: #ffffff;
+    }
+    body.mode-white .poster-footer-bar {
+      border-top-color: #e2e8f0;
+      color: #94a3b8;
+    }
+
+    /* -------------------------------------------------------------
+       TOP TOOLBAR (SCREEN-ONLY)
+       ------------------------------------------------------------- */
+    .top-controls-bar {
+      position: sticky;
+      top: 10px;
+      z-index: 9999;
+      max-width: 900px;
+      margin: 0 auto 12px auto;
+      background: rgba(16, 22, 38, 0.95);
+      backdrop-filter: blur(14px);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 10px;
+      padding: 10px 18px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+    }
+
+    .ctl-left {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      font-weight: 800;
+    }
+    .ctl-pill-a4 {
+      background: #fbbf24;
+      color: #000000;
+      font-family: var(--font-mono);
+      font-size: 10px;
+      padding: 2px 7px;
+      border-radius: 4px;
+      font-weight: 900;
+    }
+
+    .ctl-group {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn-ctl {
+      background: #1e293b;
+      color: #ffffff;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      padding: 6px 13px;
+      border-radius: 6px;
+      font-size: 11.5px;
+      font-weight: 700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s;
+      font-family: var(--font-ui);
+    }
+    .btn-ctl:hover {
+      background: #334155;
+      transform: translateY(-1px);
+    }
+    .btn-ctl.btn-gold {
+      background: #fbbf24;
+      color: #000000;
+      border-color: #f59e0b;
+      font-weight: 800;
+    }
+    .btn-ctl.btn-gold:hover {
+      background: #f59e0b;
+    }
+    .btn-ctl.btn-pitch {
+      background: #e11d48;
+      border-color: #be123c;
+    }
+    .btn-ctl.btn-pitch:hover {
+      background: #be123c;
+    }
+
+    /* -------------------------------------------------------------
+       PITCH MODAL (1-MINUTE CHEATSHEET)
+       ------------------------------------------------------------- */
+    .pitch-modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.85);
+      backdrop-filter: blur(8px);
+      z-index: 10000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 18px;
+    }
+    .pitch-modal-overlay.active {
+      display: flex;
+    }
+    .pitch-modal-box {
+      background: #0f172a;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 12px;
+      max-width: 640px;
+      width: 100%;
+      max-height: 88vh;
+      overflow-y: auto;
+      padding: 22px;
+      color: #ffffff;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8);
+    }
+    .pitch-sec {
+      background: #1e293b;
+      border-left: 3px solid #fbbf24;
+      border-radius: 6px;
+      padding: 12px 14px;
+      margin-bottom: 12px;
+    }
+
+    /* -------------------------------------------------------------
+       PRINT MEDIA QUERY (STRICT SINGLE A4 PAGE ENFORCEMENT)
+       ------------------------------------------------------------- */
+    @page {
+      size: A4 portrait;
+      margin: 0;
+    }
+
+    @media print {
+      body {
+        background: transparent !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
+      .no-print, .top-controls-bar, .pitch-modal-overlay {
+        display: none !important;
+      }
+      .poster-viewport {
+        display: block !important;
+        width: 210mm !important;
+        height: 297mm !important;
+        margin: 0 !important;
+        padding: 0 !important;
+      }
+      .a4-sheet {
+        width: 210mm !important;
+        height: 297mm !important;
+        max-height: 297mm !important;
+        box-shadow: none !important;
+        margin: 0 !important;
+        border: none !important;
+        page-break-after: avoid !important;
+        page-break-inside: avoid !important;
+      }
+    }
+  </style>
+</head>
+<body class="mode-black">
+
+  <!-- ==================== SCREEN TOOLBAR ==================== -->
+  <div class="top-controls-bar no-print">
+    <div class="ctl-left">
+      <i data-lucide="zap" class="w-4 h-4 text-[#fbbf24]"></i>
+      <span>ECLift Event Poster</span>
+      <span class="ctl-pill-a4">A4 Portrait · Full Sheet</span>
+    </div>
+
+    <div class="ctl-group">
+      <!-- Pitch script button -->
+      <button onclick="togglePitchModal()" class="btn-ctl btn-pitch">
+        <i data-lucide="mic" class="w-3.5 h-3.5"></i>
+        <span>1-Min Pitch Script</span>
+      </button>
+
+      <!-- Insert QR code image -->
+      <label class="btn-ctl" title="Insert your QR code image">
+        <i data-lucide="qr-code" class="w-3.5 h-3.5 text-[#fbbf24]"></i>
+        <span>Insert QR Code</span>
+        <input type="file" id="qrInput" accept="image/*" style="display: none;" onchange="handleQRUpload(event)">
+      </label>
+
+      <!-- Switch style Black/White -->
+      <button onclick="togglePosterStyle()" class="btn-ctl" id="styleBtn">
+        <i data-lucide="sun" class="w-3.5 h-3.5"></i>
+        <span id="styleBtnText">White Print Mode</span>
+      </button>
+
+      <!-- Print PDF -->
+      <button onclick="window.print()" class="btn-ctl btn-gold">
+        <i data-lucide="printer" class="w-3.5 h-3.5"></i>
+        <span>Print / Save PDF</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- ==================== POSTER CONTAINER ==================== -->
+  <div class="poster-viewport">
+    <div class="a4-sheet" id="posterSheet">
+
+      <!-- Background Accents -->
+      <div class="bg-grid-overlay"></div>
+      <div class="bg-giant-watermark">LIFT</div>
+
+      <!-- 1. TOP HEADER -->
+      <header class="poster-topbar">
+        <div class="brand-cluster">
+          <img src="images/ECLift_logo.svg" alt="ECLift Logo" class="brand-logo-img">
+          <div class="brand-text-block">
+            <span class="brand-sub">Centrale Lyon Unmanned Aeronautics</span>
+            <span class="brand-school">Competitive Drone & Aircraft Engineering Club</span>
+          </div>
+        </div>
+
+        <div class="top-trophy-badge">
+          <i data-lucide="trophy" class="w-3.5 h-3.5 text-[#fde047]"></i>
+          <span>#1 in Europe · European Champion</span>
+        </div>
+      </header>
+
+      <!-- 2. MASSIVE HERO SLOGAN -->
+      <section class="hero-slogan-wrap">
+        <span class="hero-pretitle">Student Engineering Club · Recruitment 2027</span>
+        
+        <h1 class="hero-headline">
+          STOP WATCHING.<br>
+          <span class="highlight-gold">START FLYING.</span>
+        </h1>
+
+        <div class="hero-subhook">
+          <p class="hero-subhook-p">
+            We design, build, and fly <strong>high-performance competition aircraft</strong>. Blank-sheet CAD to 100 km/h flight tests.
+          </p>
+          <span class="badge-no-xp">⚡ Zero Experience Required</span>
+        </div>
+      </section>
+
+      <!-- 3. TELEMETRY STATS HUD STRIP -->
+      <section class="hud-strip">
+        <div class="hud-stat">
+          <div class="hud-val accent-gold">#1</div>
+          <div class="hud-lbl">European Podium</div>
+        </div>
+        <div class="hud-stat">
+          <div class="hud-val accent-cyan">2.50m</div>
+          <div class="hud-lbl">Wingspan</div>
+        </div>
+        <div class="hud-stat">
+          <div class="hud-val">100 km/h</div>
+          <div class="hud-lbl">Flight Speed</div>
+        </div>
+        <div class="hud-stat">
+          <div class="hud-val accent-rose">100%</div>
+          <div class="hud-lbl">Student Made</div>
+        </div>
+      </section>
+
+      <!-- 4. HUGE CINEMATIC VISUAL GALLERY (ENLARGED PHOTOS) -->
+      <section class="collage-grid">
+        <!-- Visual 1: Real Victory Podium Photo -->
+        <div class="collage-item">
+          <div class="collage-img-box">
+            <img src="images/The%20winners.JPG" alt="Valencia Podium 2024">
+            <div class="collage-overlay"></div>
+          </div>
+          <span class="sticker-tag sticker-rose">🏆 European Champion</span>
+          <div class="collage-content">
+            <div class="collage-title">Podium Victory</div>
+            <div class="collage-tagline">1st Prize in Valencia (Spain)</div>
+          </div>
+        </div>
+
+        <!-- Visual 2: 3D Aircraft CAD Render -->
+        <div class="collage-item">
+          <div class="collage-img-box">
+            <img src="images/2025/ectanker_full_render.png" alt="ECTanker Heavy Cargo Aircraft" class="fit-contain">
+            <div class="collage-overlay"></div>
+          </div>
+          <span class="sticker-tag sticker-gold">✈️ Heavy-Lift Drone</span>
+          <div class="collage-content">
+            <div class="collage-title">Custom 3D CAD</div>
+            <div class="collage-tagline">CATIA · Ansys · XFLR5</div>
+          </div>
+        </div>
+
+        <!-- Visual 3: Certified Report 3-View Blueprint -->
+        <div class="collage-item">
+          <div class="collage-img-box">
+            <img src="images/2024/eclifter_three_view_drawing.png" alt="Certified 3-View Blueprint" class="fit-blueprint">
+            <div class="collage-overlay"></div>
+          </div>
+          <span class="sticker-tag sticker-emerald">📐 Certified Blueprint</span>
+          <div class="collage-content">
+            <div class="collage-title">Report Dossier</div>
+            <div class="collage-tagline">3-View Blueprints & Sizing</div>
+          </div>
+        </div>
+
+        <!-- Visual 4: Hands-On Composite Layup in Lab -->
+        <div class="collage-item">
+          <div class="collage-img-box">
+            <img src="assets/memories/6.webp" alt="Vacuum Bagging Composite Wing">
+            <div class="collage-overlay"></div>
+          </div>
+          <span class="sticker-tag sticker-blue">🛠️ FabLab Infusion</span>
+          <div class="collage-content">
+            <div class="collage-title">Carbon Workshop</div>
+            <div class="collage-tagline">Vacuum Bagging & Lasers</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5. FOUR ACTION CREWS (CLEAN & PUNCHY) -->
+      <div class="squads-header">
+        <h2 class="squads-title">
+          <i data-lucide="layers" class="w-3.5 h-3.5 text-[#fbbf24]"></i>
+          <span>Choose Your Crew · Where You Fly</span>
+        </h2>
+        <span class="squads-sub">All years welcome</span>
+      </div>
+
+      <section class="squads-grid">
+        <!-- Crew 1 -->
+        <div class="squad-card sq-1">
+          <div>
+            <div class="squad-icon-wrap">
+              <i data-lucide="wind" class="w-4 h-4"></i>
+            </div>
+            <h3 class="squad-name">Aerodynamics</h3>
+          </div>
+          <div class="squad-pills">
+            <div class="squad-pill-item"><i data-lucide="check"></i> Airfoil sizing & CFD</div>
+            <div class="squad-pill-item"><i data-lucide="check"></i> Ansys Fluent & XFLR5</div>
+            <div class="squad-pill-item"><i data-lucide="check"></i> High-lift slotted flaps</div>
+          </div>
+        </div>
+
+        <!-- Crew 2 -->
+        <div class="squad-card sq-2">
+          <div>
+            <div class="squad-icon-wrap">
+              <i data-lucide="hammer" class="w-4 h-4"></i>
+            </div>
+            <h3 class="squad-name">Composites</h3>
+          </div>
+          <div class="squad-pills">
+            <div class="squad-pill-item"><i data-lucide="check"></i> Carbon fiber vacuum layup</div>
+            <div class="squad-pill-item"><i data-lucide="check"></i> FabLab laser & CNC cutting</div>
+            <div class="squad-pill-item"><i data-lucide="check"></i> Airframe structural testing</div>
+          </div>
+        </div>
+
+        <!-- Crew 3 -->
+        <div class="squad-card sq-3">
+          <div>
+            <div class="squad-icon-wrap">
+              <i data-lucide="zap" class="w-4 h-4"></i>
+            </div>
+            <h3 class="squad-name">Avionics</h3>
+          </div>
+          <div class="squad-pills">
+            <div class="squad-pill-item"><i data-lucide="check"></i> Brushless motor dyno tests</div>
+            <div class="squad-pill-item"><i data-lucide="check"></i> Real-time radio telemetry</div>
+            <div class="squad-pill-item"><i data-lucide="check"></i> Autonomous flight code</div>
+          </div>
+        </div>
+
+        <!-- Crew 4 -->
+        <div class="squad-card sq-4">
+          <div>
+            <div class="squad-icon-wrap">
+              <i data-lucide="navigation" class="w-4 h-4"></i>
+            </div>
+            <h3 class="squad-name">Flight Ops</h3>
+          </div>
+          <div class="squad-pills">
+            <div class="squad-pill-item"><i data-lucide="check"></i> Runway tests at Corbas</div>
+            <div class="squad-pill-item"><i data-lucide="check"></i> FPV headset & RC piloting</div>
+            <div class="squad-pill-item"><i data-lucide="check"></i> European contest crew</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 6. THE BOARDING PASS: VIP ACCESS & MASSIVE QR CODE -->
+      <section class="boarding-pass-wrap">
+        <!-- Left: Flight Details & Benefits -->
+        <div class="bp-left">
+          <div class="bp-headline-badge">
+            <span class="bp-tag">GATE: SEASON 2027</span>
+            <span class="text-[6.5pt] font-mono font-bold text-gray-500 uppercase tracking-widest">BOARDING PASS // TICKET #06</span>
+          </div>
+
+          <h3 class="bp-title">Why You Should Join The Crew</h3>
+
+          <div class="bp-bullets-row">
+            <div class="bp-bullet-item">
+              <i data-lucide="check-circle-2"></i>
+              <span><strong>Boost Your CV:</strong> Build a real flying plane.</span>
+            </div>
+            <div class="bp-bullet-item">
+              <i data-lucide="check-circle-2"></i>
+              <span><strong>Travel in Europe:</strong> International contests.</span>
+            </div>
+            <div class="bp-bullet-item">
+              <i data-lucide="check-circle-2"></i>
+              <span><strong>FabLab Access:</strong> Carbon fiber & laser cutters.</span>
+            </div>
+            <div class="bp-bullet-item">
+              <i data-lucide="check-circle-2"></i>
+              <span><strong>All Students:</strong> 1A, 2A, 3A, Masters & Beginners!</span>
+            </div>
+          </div>
+
+          <div class="bp-callout-strap">
+            🚀 <strong>Ready for takeoff?</strong> No prerequisite required. If you're motivated to build or pilot, you're in!
+          </div>
+        </div>
+
+        <!-- Middle Perforation -->
+        <div class="bp-perforated-divider"></div>
+
+        <!-- Right: Massive Scannable QR Frame -->
+        <div class="bp-right-qr" onclick="triggerFilePicker()" title="Drop or click to insert your QR code image (or paste Ctrl+V)">
+          <div class="qr-frame-box" id="qrBox">
+            <div class="qr-corner-notch q-tl"></div>
+            <div class="qr-corner-notch q-tr"></div>
+            <div class="qr-corner-notch q-bl"></div>
+            <div class="qr-corner-notch q-br"></div>
+
+            <svg id="qrPlaceholder" class="qr-placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" style="display: none;">
+              <rect width="18" height="18" x="3" y="3" rx="2"></rect>
+              <path d="M7 7h.01M17 7h.01M7 17h.01M12 12h.01M17 17h.01M12 7h.01M7 12h.01M17 12h.01M12 17h.01"></path>
+            </svg>
+            <img id="qrImg" class="qr-preview-img-active" src="qr-code.png" style="display: block;" alt="QR Code">
+          </div>
+
+          <div class="qr-action-heading">Scan to Join Us</div>
+          <div class="qr-action-instruction" id="qrHintText" style="display: none;"></div>
+          <div class="qr-url-pill">eclift.github.io</div>
+        </div>
+      </section>
+
+      <!-- 7. FOOTER TECHNICAL STRIP -->
+      <footer class="poster-footer-bar">
+        <div>ECLIFT // ÉCOLE CENTRALE DE LYON · UNMANNED AIRCRAFT RACING TEAM</div>
+        <div>VALENCIA 2024 CHAMPION · AIR CARGO CHALLENGE 2027</div>
+        <div>CAMPUS ÉCULLY · AERODROME DE CORBAS</div>
+      </footer>
+
+    </div>
+  </div>
+
+  <!-- ==================== 1-MINUTE PITCH MODAL ==================== -->
+  <div class="pitch-modal-overlay" id="pitchModal" onclick="closePitchOnBg(event)">
+    <div class="pitch-modal-box">
+      <div class="flex justify-between items-center pb-3 mb-4 border-b border-gray-700">
+        <div class="flex items-center gap-2">
+          <i data-lucide="mic" class="w-5 h-5 text-[#fbbf24]"></i>
+          <h2 class="text-lg font-bold">Your 1-Minute Pitch Script</h2>
+        </div>
+        <button onclick="togglePitchModal()" class="text-gray-400 hover:text-white text-xl">✕</button>
+      </div>
+
+      <div class="pitch-sec">
+        <span class="text-[10px] font-mono text-[#fbbf24] font-bold block mb-1">00s – 15s · THE PUNCHY HOOK</span>
+        <p class="text-sm text-gray-100 font-semibold">
+          "Who in this room has ever wanted to build a real aircraft and watch it fly? We are <strong>ECLift</strong>, the competitive aeronautics and drone club of Centrale Lyon. Last summer in Valencia, our student cargo plane won <strong>1st Place in Europe at the XtraChallenge</strong>!"
+        </p>
+        <p class="text-xs text-gray-400 italic mt-1">
+          [FR]: "Qui a déjà rêvé de concevoir et faire voler un vrai avion ? Nous sommes ECLift, le club d'ingénierie aéro de Centrale Lyon. L'été dernier à Valence, notre avion-cargo a remporté la 1ère place européenne au concours XtraChallenge !"
+        </p>
+      </div>
+
+      <div class="pitch-sec">
+        <span class="text-[10px] font-mono text-[#fbbf24] font-bold block mb-1">15s – 35s · WHAT WE ACTUALLY DO</span>
+        <p class="text-sm text-gray-100 font-semibold">
+          "Zero fluff, pure hands-on engineering: we start from a blank sheet of paper, calculate aerodynamics on Ansys CFD, lay up carbon fiber and laser-cut wings at the FabLab, wire autonomous telemetry, and fly at 100 km/h at Corbas aerodrome."
+        </p>
+        <p class="text-xs text-gray-400 italic mt-1">
+          [FR]: "Zéro blabla, 100% concret : on part d'une feuille blanche, calculs aéro sur Ansys, drapage carbone et découpe laser au FabLab, électronique embarquée, et essais en vol à l'aérodrome de Corbas."
+        </p>
+      </div>
+
+      <div class="pitch-sec">
+        <span class="text-[10px] font-mono text-[#fbbf24] font-bold block mb-1">35s – 50s · NO EXPERIENCE NEEDED</span>
+        <p class="text-sm text-gray-100 font-semibold">
+          "You don't need any prior RC or aviation experience. 1A, 2A, 3A, Masters—we train everyone. If you like design, building, coding, or just want to be on a winning European team, you belong here."
+        </p>
+        <p class="text-xs text-gray-400 italic mt-1">
+          [FR]: "Pas besoin d'expérience ! Que vous soyez en 1A, 2A, 3A ou Master, on forme tout le monde. Si vous aimez bricoler, concevoir, coder ou participer à une équipe qui gagne, rejoignez-nous."
+        </p>
+      </div>
+
+      <div class="pitch-sec">
+        <span class="text-[10px] font-mono text-[#fbbf24] font-bold block mb-1">50s – 60s · CALL TO ACTION</span>
+        <p class="text-sm text-gray-100 font-semibold">
+          "Scan the QR code on the flyer to join our group and see our flight videos. Come chat with us right after class. Thank you!"
+        </p>
+        <p class="text-xs text-gray-400 italic mt-1">
+          [FR]: "Scannez le QR code sur l'affiche pour rejoindre le groupe et voir nos vols en vidéo. Venez nous voir à la fin de l'heure. Merci !"
+        </p>
+      </div>
+
+      <div class="text-right pt-2">
+        <button onclick="togglePitchModal()" class="btn-ctl btn-gold">
+          Ready to pitch!
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== INTERACTIVITY SCRIPTS ==================== -->
+  <script>
+    // Init icons
+    lucide.createIcons();
+
+    // 1. Toggle Black / White Poster style
+    function togglePosterStyle() {
+      const body = document.body;
+      const btnText = document.getElementById('styleBtnText');
+      if (body.classList.contains('mode-black')) {
+        body.classList.remove('mode-black');
+        body.classList.add('mode-white');
+        btnText.textContent = 'Black Poster Mode';
+      } else {
+        body.classList.remove('mode-white');
+        body.classList.add('mode-black');
+        btnText.textContent = 'White Print Mode';
+      }
+      lucide.createIcons();
+    }
+
+    // 2. Pitch modal toggle
+    function togglePitchModal() {
+      const modal = document.getElementById('pitchModal');
+      modal.classList.toggle('active');
+    }
+    function closePitchOnBg(e) {
+      if (e.target.id === 'pitchModal') {
+        togglePitchModal();
+      }
+    }
+
+    // 3. QR Code Upload & Drag & Drop
+    function triggerFilePicker() {
+      document.getElementById('qrInput').click();
+    }
+
+    function handleQRUpload(event) {
+      const file = event.target.files[0];
+      if (file) {
+        showQR(file);
+      }
+    }
+
+    function showQR(file) {
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        const qrImg = document.getElementById('qrImg');
+        const qrPlaceholder = document.getElementById('qrPlaceholder');
+        const qrHint = document.getElementById('qrHintText');
+
+        qrImg.src = e.target.result;
+        qrImg.style.display = 'block';
+        qrPlaceholder.style.display = 'none';
+        qrHint.style.display = 'none';
+      };
+      reader.readAsDataURL(file);
+    }
+
+    // Drag and drop onto QR box
+    const qrTarget = document.getElementById('qrBox');
+    qrTarget.addEventListener('dragover', (e) => {
+      e.preventDefault();
+      qrTarget.style.borderColor = '#fbbf24';
+      qrTarget.style.background = '#fef3c7';
+    });
+    qrTarget.addEventListener('dragleave', (e) => {
+      e.preventDefault();
+      qrTarget.style.borderColor = '';
+      qrTarget.style.background = '';
+    });
+    qrTarget.addEventListener('drop', (e) => {
+      e.preventDefault();
+      qrTarget.style.borderColor = '';
+      qrTarget.style.background = '';
+      if (e.dataTransfer.files && e.dataTransfer.files[0]) {
+        showQR(e.dataTransfer.files[0]);
+      }
+    });
+
+    // Paste from clipboard (Ctrl+V)
+    window.addEventListener('paste', (e) => {
+      const items = (e.clipboardData || e.originalEvent.clipboardData).items;
+      for (const item of items) {
+        if (item.type.indexOf('image') === 0) {
+          const blob = item.getAsFile();
+          showQR(blob);
+          break;
+        }
+      }
+    });
+  </script>
+</body>
+</html>
